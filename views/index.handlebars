@@ -16,33 +16,41 @@
 
         <div>
             <img src="https://www.pngitem.com/pimgs/m/371-3717432_hamburger-clipart-burger-cute-hamburger-clip-art-hd.png"
-                alt="clipartburger" style="width: 200px; height: 200px" class = "center">
+                alt="clipartburger" style="width: 200px; height: 200px" class="center">
         </div>
 
+        <br>
 
         <h1 style="text-align: center;
   font-family: monospace;
   font-size: xxx-large; color: maroon">Eat-Da-Burger!</h1>
 
-        <h2>Burgers that haven't been devoured yet!</h2>
+        <br>
+        <br>
 
-        <ul>
+        <h2 style="text-align: center;
+  font-family: monospace;
+  font-size: x-large; color: maroon">Burgers that haven't been devoured yet!</h2>
+
+        <ul style="text-align: center;">
             {{#each burgers}}
             {{#unless devoured}}
             <div>{{id}}.{{burger_name}}</div>
             <div>
-                <form class="change-devoured">
+                <form class=" change-devoured">
                     <input type="hidden" class="burger_id" value={{id}}>
-                    <button type="submit"> Devour It</button>
+                    <button type="submit" class="btn btn-danger"> Devour It</button>
                 </form>
             </div>
             {{/unless}}
             {{/each}}
         </ul>
 
-        <h2>Burgers that have been devoured!</h2>
+        <h2 style="text-align: center;
+  font-family: monospace;
+  font-size: x-large; color: maroon">Burgers that have been devoured!</h2>
 
-        <ul>
+        <ul style="text-align: center;">
             {{#each burgers}}
             {{#if devoured}}
             <input type="text" placeholder="{{id}}.{{burger_name}}" readonly>
@@ -50,7 +58,8 @@
             {{/each}}
         </ul>
         <form class="create-form">
-            <h2>Add a Burger</h2>
+            <h2 style="text-align: center; font-family: monospace; font-size: x-large; color: maroon">Add a burger you'd
+                like to devour</h2>
 
 
             <div class="form-group">
@@ -64,7 +73,7 @@
                 <input type="radio" name="status" value="0"> Up for Grabs!
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-secondary">Submit</button>
         </form>
 
     </div>

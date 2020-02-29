@@ -5,6 +5,13 @@
   width: 50%;
 }
 
+h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: xxx-large; 
+  color: maroon;
+}
+
 li {
     padding: 5px;
     margin: 5px;

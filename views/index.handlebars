@@ -1,44 +1,74 @@
-<h1>Burger!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Burgers that haven't been devoured yet!</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/burger_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <div>{{id}}.{{burger_name}}</div>
-    <div>
-        <form class="change-devoured">
-            <input type="hidden" class="burger_id" value={{id}}>
-            <button type="submit"> Devour It</button>
+    <title>Eat-da-Burger</title>
+</head>
+
+<body>
+    <div class="background" style="background-color: palegoldenrod; width">
+
+
+        <div>
+            <img src="https://www.pngitem.com/pimgs/m/371-3717432_hamburger-clipart-burger-cute-hamburger-clip-art-hd.png"
+                alt="clipartburger" style="width: 200px; height: 200px" class = "center">
+        </div>
+
+
+        <h1 style="text-align: center;
+  font-family: monospace;
+  font-size: xxx-large; color: maroon">Eat-Da-Burger!</h1>
+
+        <h2>Burgers that haven't been devoured yet!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <div>{{id}}.{{burger_name}}</div>
+            <div>
+                <form class="change-devoured">
+                    <input type="hidden" class="burger_id" value={{id}}>
+                    <button type="submit"> Devour It</button>
+                </form>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </ul>
+
+        <h2>Burgers that have been devoured!</h2>
+
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <input type="text" placeholder="{{id}}.{{burger_name}}" readonly>
+            {{/if}}
+            {{/each}}
+        </ul>
+        <form class="create-form">
+            <h2>Add a Burger</h2>
+
+
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="devoured">Devoured?</label><br>
+                <input type="radio" name="status" value="1" checked> Devoured!<br>
+                <input type="radio" name="status" value="0"> Up for Grabs!
+            </div>
+
+            <button type="submit">Submit</button>
         </form>
-    </div>
-    {{/unless}}
-    {{/each}}
-</ul>
 
-<h2>Burgers that have been devoured!</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <input type="text" placeholder="{{id}}.{{burger_name}}" readonly>
-    {{/if}}
-    {{/each}}
-</ul>
-<form class="create-form">
-    <h2>Add a Burger</h2>
-
-
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="name">
     </div>
 
-    <div class="form-group">
-        <label for="devoured">Devoured?</label><br>
-        <input type="radio" name="status" value="1" checked> Devoured!<br>
-        <input type="radio" name="status" value="0"> Up for Grabs!
-    </div>
+</body>
 
-    <button type="submit">Add Burger</button>
-</form>
+</html>
